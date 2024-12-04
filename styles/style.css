@@ -1,6 +1,6 @@
 :root {
   --main-color: #189ab4;
-  --box-default-color: #fff;
+  --box-default-color: rgb(56, 169, 255);
 }
 
 * {
@@ -19,10 +19,6 @@ h3 {
 
 body {
   background: var(--main-color);
-  /* background: url("../assets/values-back-card.png");
-  background-position: center;
-  background-size: 200%; */
-  /* background-repeat: no-repeat; */
   height: 100dvh;
   display: flex;
   align-items: center;
@@ -117,6 +113,7 @@ header {
 .input-container {
   display: flex;
   gap: 10px;
+  position: relative;
 }
 
 .input {
@@ -125,9 +122,6 @@ header {
 }
 
 .preview-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   width: 90%;
   max-width: 1000px;
   border: 2px solid white;
@@ -147,20 +141,21 @@ header {
   gap: 5px;
   width: 200px;
   height: 200px;
-  background-color: var(--box-default-color);
   transition: all 1s;
   padding: 1rem;
   align-items: start;
   font-size: 1rem;
   font-weight: normal;
   color: black;
-  background: linear-gradient(
-    to top right,
-    #075691 0%,
-    rgba(56, 169, 255) 75%,
-    #075691 100%
-  );
+  background: var(--box-default-color);
   font-weight: bold;
+  overflow: hidden;
+}
+
+.test {
+  margin-bottom: 1rem;
+  text-align: center;
+  font-size: 2rem;
 }
 
 #submit-btn {
@@ -178,14 +173,41 @@ header {
   font-weight: bold;
 }
 
+.msg {
+  display: none;
+  color: red;
+}
+
+.suggestion-box {
+  color: black;
+  position: absolute;
+  top: -100%; /* Place les suggestions juste au-dessus de l'input */
+  left: 0;
+  width: 100%; /* La suggestion box fait 80% de la largeur de l'input */
+  background-color: #ffffffa2;
+  border: 1px solid #ccc;
+  max-height: 150px;
+  overflow-y: auto;
+  z-index: 1000; /* Assurez-vous que les suggestions soient visibles au-dessus de tout autre contenu */
+}
+
+.suggestion-box li {
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.suggestion-item:hover {
+  background-color: #f0f0f0;
+}
+
 /* Queries */
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 700px) {
   .input-container {
     flex-direction: column;
     width: 80%;
   }
   .rules {
-    padding: 0.5rem;
+    padding: 1rem;
   }
 }
