@@ -30,6 +30,10 @@ body {
   font-family: sans-serif;
 }
 
+h1 {
+  font-size: 2.5rem;
+}
+
 .image-container {
   width: 100%;
   height: 100%;
@@ -74,6 +78,7 @@ body {
   transform: translateY(-120%);
   transition: transform 1s;
   font-size: clamp(12px, 2vw, 16px);
+  z-index: 99;
 }
 
 .close-rules {
@@ -121,7 +126,8 @@ header {
 
 .preview-container {
   display: flex;
-  justify-content: start;
+  justify-content: center;
+  align-items: center;
   width: 90%;
   max-width: 1000px;
   border: 2px solid white;
@@ -148,10 +154,28 @@ header {
   font-size: 1rem;
   font-weight: normal;
   color: black;
+  background: linear-gradient(
+    to top right,
+    #075691 0%,
+    rgba(56, 169, 255) 75%,
+    #075691 100%
+  );
+  font-weight: bold;
 }
 
 #submit-btn {
   padding: 0.5rem;
+  border-radius: 5px;
+  border: none;
+  background: linear-gradient(
+    to right,
+    #075691,
+    rgba(56, 169, 255, 0.9),
+    #075691
+  );
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 
 /* Queries */
