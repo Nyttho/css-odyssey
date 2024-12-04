@@ -6,7 +6,6 @@ const closeRulesBtn = document.querySelector(".close-rules-X");
 const root = document.documentElement;
 
 submitBtn.addEventListener("click", handleClick);
-submitBtn.addEventListener("touchstart", handleClick);
 displayRulesBtn.addEventListener("click", toggleRules);
 closeRulesBtn.addEventListener("click", toggleRules);
 
