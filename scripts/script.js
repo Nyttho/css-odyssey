@@ -53,8 +53,8 @@ function reset() {
 }
 
 function handleClick() {
-  const propertyInputValue = propertyInput.value.trim();
-  const valueInputValue = valueInput.value.trim();
+  const propertyInputValue = propertyInput.value.trim().toLowerCase();
+  const valueInputValue = valueInput.value.trim().toLowerCase();
 
   if (!propertyInputValue || !valueInputValue) {
     console.log("Please enter both a CSS property and a value.");
