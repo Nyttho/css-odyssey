@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/style.css" />
+    <script src="scripts/script.js" defer></script>
+    <title>CSS Odyssey</title>
+  </head>
+  <body>
+    <div class="app">
+      <div class="rules">
+        <div class="close-rules"><span class="close-rules-X">X</span></div>
+        <h3>Setup:</h3>
+        <p>
+          The game is designed for 2 to 4 players, from 12 years old and more
+        </p>
+        <p>A game lasts about 20 minutes</p>
+        <p>
+          Shuffle the "property" cards, deal them 1 by 1 (10 for each player),
+          those cards are set inline in front of the players
+        </p>
+        <p>
+          Shuffle the "value" cards and special cards, deal them 1 by 1 (5 for
+          each player)
+        </p>
+        <p>Each player should always have 5 cards in their hand</p>
+        <p>The youngest player starts, then play proceeds clockwise.</p>
+        <h3>Rules:</h3>
+        <p>Each turn, the player has 3 options:</p>
+        <ul>
+          <li>Place an appropriate value on their own property cards</li>
+          <li>
+            Place an inappropriate value on their opponents' property cards to
+            create a 'bug'
+          </li>
+          <li>
+            Fix a bug on one of their own property cards by discarding the bad
+            value and replacing it with good value
+          </li>
+        </ul>
+        <p>
+          If a player plays a "senior dev" card, he/she can fix 1 to 3 bugs on
+          his/her board at the same time by putting a "fix" token on the
+          inapropriate values on their board
+        </p>
+        <p>
+          If a player plays a "junior dev" card, he/she can put 1 to 3 cards in
+          his/her hand on 1, 2 or 3 opponents to put "bugs" on their board
+        </p>
+        <p>
+          First player to complete his/her stylesheet without any bug wins the
+          game
+        </p>
+        <h3>Content:</h3>
+        <p>40 x property cards</p>
+        <p>100 x value cards</p>
+        <p>15 x "fix" tokens</p>
+        <p>special cards :</p>
+        <p>5 senior dev cards</p>
+        <p>5 junior dev cards</p>
+      </div>
+      <nav>
+        <div class="forgot-rules-txt">
+          Forgot the rules ? <span class="display-rules-btn">click here</span>
+        </div>
+      </nav>
+      <header>
+        <h1>CSS Odyssey</h1>
+
+        <p>May I associate this value to this property ?</p>
+      </header>
+      <div class="input-container">
+        <input
+          type="text"
+          class="property-input input"
+          placeholder="Property"
+        />
+        <input type="text" class="value-input input" placeholder="Value" />
+        <button id="submit-btn">Ok</button>
+      </div>
+      <div class="preview-container">
+        <div class="preview-box">
+          <p>Preview</p>
+          <p>Box</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

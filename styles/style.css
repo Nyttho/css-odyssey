@@ -1,0 +1,122 @@
+:root {
+  --main-color: #189ab4;
+  --box-default-color: #fff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+li {
+  list-style-type: none;
+}
+
+h3 {
+  text-decoration: underline;
+}
+
+body {
+  background: var(--main-color);
+  height: 100dvh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-family: sans-serif;
+}
+
+.app {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.rules {
+  position: absolute;
+  inset: 0;
+  background-color: #1c1c1c;
+  color: white;
+  padding: 1rem 2rem;
+  line-height: 1.38rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  transform: translateY(-100%);
+  transition: transform 1s;
+}
+
+.close-rules {
+  text-align: right;
+  cursor: pointer;
+}
+
+.rules.active {
+  transform: translateY(0);
+}
+
+nav {
+  display: flex;
+  width: 100%;
+  justify-content: end;
+  padding: 1rem;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.display-rules-btn {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+header {
+  padding: 20px 0;
+  height: 20%;
+  text-align: center;
+}
+
+.input-container {
+  display: flex;
+  gap: 10px;
+}
+
+.input {
+  padding: 1rem;
+  outline: none;
+}
+
+.preview-container {
+  display: flex;
+  justify-content: start;
+  width: 90%;
+  max-width: 1000px;
+  border: 5px solid black;
+  height: 400px;
+  margin: 20px;
+  border-radius: 15px;
+  padding: 2rem;
+  overflow: hidden;
+}
+
+.preview-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 5px;
+  width: 200px;
+  height: 200px;
+  background-color: var(--box-default-color);
+  transition: all 1s;
+  padding: 1rem;
+  align-items: start;
+  font-size: 1rem;
+  font-weight: normal;
+}
+
+#submit-btn {
+  padding: 0.5rem;
+}
