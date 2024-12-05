@@ -110,6 +110,7 @@ function checkPropertyValue(property, value) {
   const previewBox = document.querySelector(".preview-box");
   const alreadyGotMsg = document.querySelector(".already-got-msg");
   const errorMsg = document.querySelector(".error-msg");
+  const testTxt = document.querySelector(".test");
 
   // Réinitialiser les messages
   alreadyGotMsg.style.display = "none";
@@ -129,7 +130,11 @@ function checkPropertyValue(property, value) {
 
       // Appliquer un délai avant de modifier la propriété
       setTimeout(() => {
-        previewBox.style[property] = value;
+        if (property === "text-align") {
+          testTxt.style[property] = value;
+        } else {
+          previewBox.style[property] = value;
+        }
       }, 1000);
     } else {
       // Propriété ou valeur invalide
@@ -144,6 +149,9 @@ function checkPropertyValue(property, value) {
 
 function reset() {
   const previewBox = document.querySelector(".preview-box");
+  const testTxt = document.querySelector(".test");
+
+  testTxt.style.textAlign = "center";
 
   const defaultGradient = getComputedStyle(root)
     .getPropertyValue("--box-default-gradient")
@@ -164,6 +172,7 @@ function reset() {
   previewBox.style.flexDirection = "column";
   previewBox.style.justifyContent = "flex-start";
   previewBox.style.fontWeight = "bold";
+  previewBox.style.textTransform = "capitalize";
 
   // Cacher les messages d'erreur et de déjà fait lors du reset
   document.querySelector(".already-got-msg").style.display = "none";
