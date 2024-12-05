@@ -185,12 +185,12 @@ header {
 .suggestion-box {
   color: black;
   position: absolute;
-  top: -100%;
+  top: -60%;
   left: 0;
   width: 100%;
   background-color: #fffffff2;
   border: 1px solid #ccc;
-  max-height: 150px;
+  max-height: 90px;
   overflow-y: auto;
   z-index: 1000;
   padding: 0.5rem;
