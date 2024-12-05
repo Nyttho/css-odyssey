@@ -98,21 +98,37 @@ function selectSuggestion(item, isValues) {
 function checkPropertyValue(property, value) {
   const testElement = document.createElement("div");
   const previewBox = document.querySelector(".preview-box");
+  const alreadyGotMsg = document.querySelector(".already-got-msg");
+  const errorMsg = document.querySelector(".error-msg");
+
+  // Réinitialiser les messages
+  alreadyGotMsg.style.display = "none";
+  errorMsg.style.display = "none";
 
   try {
+    // Tester si la propriété et la valeur sont valides
     testElement.style[property] = value;
     if (testElement.style[property] === value) {
-      reset();
+      // Vérifier si la propriété et la valeur sont déjà appliquées
+      if (previewBox.style[property] === value) {
+        alreadyGotMsg.style.display = "block"; // Afficher le message "déjà appliqué"
+        return;
+      }
+
+      reset(); // Réinitialiser le style de la boîte
 
       // Appliquer un délai avant de modifier la propriété
       setTimeout(() => {
         previewBox.style[property] = value;
       }, 1000);
     } else {
-      console.log("Valeur ou propriété non valide");
+      // Propriété ou valeur invalide
+      errorMsg.style.display = "block";
     }
   } catch (e) {
+    // Afficher le message d'erreur si une exception est levée
     console.error("Erreur lors de l'application de la propriété :", e);
+    errorMsg.style.display = "block";
   }
 }
 
