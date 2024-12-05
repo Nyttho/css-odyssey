@@ -181,17 +181,18 @@ header {
 .suggestion-box {
   color: black;
   position: absolute;
-  top: -100%; /* Place les suggestions juste au-dessus de l'input */
+  top: -100%;
   left: 0;
-  width: 100%; /* La suggestion box fait 80% de la largeur de l'input */
-  background-color: #ffffffa2;
+  width: 100%;
+  background-color: #fffffff2;
   border: 1px solid #ccc;
   max-height: 150px;
   overflow-y: auto;
-  z-index: 1000; /* Assurez-vous que les suggestions soient visibles au-dessus de tout autre contenu */
+  z-index: 1000;
+  padding: 0.5rem;
 }
 
-.suggestion-box li {
+.suggestion-box div {
   padding: 0.5rem;
   cursor: pointer;
 }

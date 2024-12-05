@@ -37,15 +37,14 @@ closeRulesBtn.addEventListener("click", toggleRules);
 propertyInput.addEventListener("input", filterProperties);
 valueInput.addEventListener("input", filterValues);
 
-// Créer la boîte de suggestions dynamiquement
 function createSuggestionBox() {
   suggestionsBox = document.createElement("div");
   suggestionsBox.classList.add("suggestion-box");
   suggestionsBox.style.position = "absolute";
-  suggestionsBox.style.bottom = "100%"; // Le bas de la suggestion box sera au-dessus de l'input
-  suggestionsBox.style.width = "80%"; // Prendre 80% de la largeur de l'input
-  suggestionsBox.style.display = "none"; // Initialement cachée
-  suggestionsBox.style.marginBottom = "-10px"; // Ajuster la distance avec l'input
+  suggestionsBox.style.bottom = "100%";
+  suggestionsBox.style.width = "100%";
+  suggestionsBox.style.display = "none";
+  suggestionsBox.style.marginBottom = "-10px";
 
   const inputContainer = document.querySelector(".input-container");
   inputContainer.appendChild(suggestionsBox);
