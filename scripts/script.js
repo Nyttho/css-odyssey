@@ -16,6 +16,16 @@ const properties = {
   "margin-left": ["10%", "1rem"],
   width: ["100px", "min-content"],
   height: ["50vh", "max-content"],
+  "justify-content": ["center", "end"],
+  opacity: ["0", "1"],
+  "align-items": ["start", "baseline"],
+  "flex-direction": ["row", "row-reverse", "column-reverse"],
+  "text-align": ["right", "justify"],
+  scale: ["none", "2"],
+  rotate: ["30deg", "1.57rad"],
+  "font-weight": ["bold", "lighter"],
+  "text-transform": ["capitalize", "lowercase"],
+  visibility: ["hidden", "visible"],
 };
 
 let suggestionsBox;
