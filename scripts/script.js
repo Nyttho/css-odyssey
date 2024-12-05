@@ -198,27 +198,3 @@ document.addEventListener("click", function (event) {
 });
 
 createSuggestionBox();
-
-//random neon glowing
-
-const preview = document.querySelector(".preview-container");
-
-function randomInterval(min, max) {
-  return Math.random() * (max - min) + min;
-}
-
-function simulateNeonFatigue() {
-  const fatigueDuration = randomInterval(100, 500);
-  const fatigueInterval = randomInterval(5000, 20000);
-
-  preview.style.boxShadow = "none";
-
-  setTimeout(() => {
-    preview.style.boxShadow = "";
-    preview.style.animation = "neon-glow 3s infinite ease-in-out";
-  }, fatigueDuration);
-
-  setTimeout(simulateNeonFatigue, fatigueInterval);
-}
-
-setTimeout(simulateNeonFatigue, randomInterval(3000, 10000)); // Délai initial : entre 3 et 10 secondes
