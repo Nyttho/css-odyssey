@@ -75,6 +75,7 @@ h1 {
   transition: transform 1s;
   font-size: clamp(12px, 2vw, 16px);
   z-index: 99;
+  min-height: fit-content;
 }
 
 .close-rules {
@@ -100,6 +101,10 @@ nav {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+hr {
+  margin: 0.5rem 0;
 }
 
 .display-rules-btn {
@@ -214,5 +219,18 @@ header {
   }
   .rules {
     padding: 1rem;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .input-container {
+    flex-direction: column;
+    width: 80%;
+  }
+  .rules {
+    padding: 0.5rem;
+  }
+  .close-rules {
+    font-size: 0.5rem;
   }
 }
