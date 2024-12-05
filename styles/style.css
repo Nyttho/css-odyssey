@@ -140,6 +140,7 @@ header {
   border-radius: 15px;
   padding: 2rem;
   overflow: hidden;
+  animation: neon-glow 3s infinite ease-in-out;
 }
 
 .preview-box {
@@ -147,8 +148,8 @@ header {
   flex-direction: column;
   justify-content: flex-start;
   gap: 5px;
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
   transition: all 1s;
   padding: 1rem;
   align-items: start;
@@ -232,5 +233,17 @@ header {
   }
   .close-rules {
     font-size: 0.5rem;
+  }
+}
+
+@keyframes neon-glow {
+  0%,
+  100% {
+    box-shadow: orange 0 0 5px 2px, inset orange 0 0 5px 2px,
+      orange 0 0 10px 6px, inset orange 0 0 10px 6px;
+  }
+  50% {
+    box-shadow: orange 0 0 10px 4px, inset orange 0 0 10px 4px,
+      orange 0 0 15px 8px, inset orange 0 0 15px 8px;
   }
 }

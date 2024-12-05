@@ -63,7 +63,6 @@ function filterValues() {
   const propertyQuery = propertyInput.value.toLowerCase();
   const valueQuery = valueInput.value.toLowerCase();
 
-  // Vérifier si une propriété valide est entrée avant de filtrer les valeurs
   if (properties[propertyQuery]) {
     const filteredValues = properties[propertyQuery].filter((value) =>
       value.toLowerCase().includes(valueQuery)
@@ -73,7 +72,6 @@ function filterValues() {
 }
 
 function updateSuggestions(items, isValues = false) {
-  // Vider les suggestions existantes à chaque nouvelle entrée
   suggestionsBox.innerHTML = "";
 
   if (items.length === 0) {
@@ -101,7 +99,7 @@ function selectSuggestion(item, isValues) {
     propertyInput.value = item;
   }
 
-  suggestionsBox.style.display = "none"; // Cacher les suggestions une fois qu'un élément est sélectionné
+  suggestionsBox.style.display = "none";
 }
 
 function checkPropertyValue(property, value) {
@@ -111,23 +109,19 @@ function checkPropertyValue(property, value) {
   const errorMsg = document.querySelector(".error-msg");
   const testTxt = document.querySelector(".test");
 
-  // Réinitialiser les messages
   alreadyGotMsg.style.display = "none";
   errorMsg.style.display = "none";
 
   try {
-    // Tester si la propriété et la valeur sont valides
     testElement.style[property] = value;
     if (testElement.style[property] === value) {
-      // Vérifier si la propriété et la valeur sont déjà appliquées
       if (previewBox.style[property] === value) {
-        alreadyGotMsg.style.display = "block"; // Afficher le message "déjà appliqué"
+        alreadyGotMsg.style.display = "block";
         return;
       }
 
-      reset(); // Réinitialiser le style de la boîte
+      reset();
 
-      // Appliquer un délai avant de modifier la propriété
       setTimeout(() => {
         if (property === "text-align") {
           testTxt.style[property] = value;
@@ -136,11 +130,9 @@ function checkPropertyValue(property, value) {
         }
       }, 1000);
     } else {
-      // Propriété ou valeur invalide
       errorMsg.style.display = "block";
     }
   } catch (e) {
-    // Afficher le message d'erreur si une exception est levée
     console.error("Erreur lors de l'application de la propriété :", e);
     errorMsg.style.display = "block";
   }
@@ -173,7 +165,6 @@ function reset() {
   previewBox.style.fontWeight = "bold";
   previewBox.style.textTransform = "capitalize";
 
-  // Cacher les messages d'erreur et de déjà fait lors du reset
   document.querySelector(".already-got-msg").style.display = "none";
   document.querySelector(".error-msg").style.display = "none";
 }
@@ -195,7 +186,6 @@ function toggleRules() {
   rules.classList.toggle("active");
 }
 
-// Masquer la suggestion box si l'utilisateur clique en dehors de celle-ci
 document.addEventListener("click", function (event) {
   const suggestionBox = document.querySelector(".suggestion-box");
   const isClickInsideSuggestionBox = suggestionBox.contains(event.target);
@@ -203,9 +193,32 @@ document.addEventListener("click", function (event) {
     propertyInput.contains(event.target) || valueInput.contains(event.target);
 
   if (!isClickInsideSuggestionBox && !isClickInsideInput) {
-    suggestionsBox.style.display = "none"; // Masquer la suggestion box
+    suggestionsBox.style.display = "none";
   }
 });
 
-// Initialisation
-createSuggestionBox(); // Créer la suggestion box une seule fois lors du chargement
+createSuggestionBox();
+
+//random neon glowing
+
+const preview = document.querySelector(".preview-container");
+
+function randomInterval(min, max) {
+  return Math.random() * (max - min) + min;
+}
+
+function simulateNeonFatigue() {
+  const fatigueDuration = randomInterval(100, 500);
+  const fatigueInterval = randomInterval(5000, 20000);
+
+  preview.style.boxShadow = "none";
+
+  setTimeout(() => {
+    preview.style.boxShadow = "";
+    preview.style.animation = "neon-glow 3s infinite ease-in-out";
+  }, fatigueDuration);
+
+  setTimeout(simulateNeonFatigue, fatigueInterval);
+}
+
+setTimeout(simulateNeonFatigue, randomInterval(3000, 10000)); // Délai initial : entre 3 et 10 secondes
