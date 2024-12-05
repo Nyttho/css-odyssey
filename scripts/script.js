@@ -151,8 +151,8 @@ function reset() {
   previewBox.style.background = defaultGradient;
   previewBox.style.margin = "0";
   previewBox.style.borderRadius = "0";
-  previewBox.style.width = "200px";
-  previewBox.style.height = "200px";
+  previewBox.style.width = "150px";
+  previewBox.style.height = "150px";
   previewBox.style.display = "flex";
   previewBox.style.fontSize = "1rem";
   previewBox.style.rotate = "0deg";
